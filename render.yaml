@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: exoplanet-ml-api
+    env: python
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn main:app
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
